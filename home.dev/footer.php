@@ -3,11 +3,15 @@
 
 			<div class="row">
 				<div class="col-md-6">
-					<a href="http://www.pronamic.eu/">Pronamic <?php echo date( 'Y' ); ?></a>
+					<p>
+						<a href="http://www.pronamic.eu/">Pronamic <?php echo date( 'Y' ); ?></a>
+					</p>
 				</div>
 
 				<div class="col-md-6 text-right">
-
+					<p>
+						<a href="https://github.com/remcotolsma/localhost-home-dev"><i class="fa fa-github"></i> GitHub</a>
+					</p>
 				</div>
 			</div>
 		</div>
