@@ -1,4 +1,15 @@
 
+			<hr />
+
+			<div class="row">
+				<div class="col-md-6">
+					<a href="http://www.pronamic.eu/">Pronamic <?php echo date( 'Y' ); ?></a>
+				</div>
+
+				<div class="col-md-6 text-right">
+
+				</div>
+			</div>
 		</div>
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
