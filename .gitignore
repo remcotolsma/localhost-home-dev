@@ -1,6 +1,9 @@
 # Config
 /config.php
 
+# Bower
+bower_components
+
 # Develepmont
 /*.dev
 
