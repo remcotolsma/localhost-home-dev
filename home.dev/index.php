@@ -1,96 +1,26 @@
 <?php
 
-require '../config.php';
+include 'load.php';
 
-$websites = array();
+include 'header.php';
 
-$options = array(
-	'home.dev' => array(
-		'display_name' => 'Home',
-	),
-	'phpmyadmin.dev' => array(
-		'display_name' => 'phpMyAdmin',
-	),
-	'phpinfo.dev' => array(
-		'display_name' => 'phpinfo()',
-	),
-);
+?>
+<div class="list-group">
 
-foreach ( glob( '../*.dev' ) as $file ) {
-	$project = basename( $file );
+	<?php foreach ( $websites as $website ) : ?>
 
-	if ( is_dir ( $file ) ) {
-		$basename = basename( $file );
+		<a href="<?php echo $website->url; ?>" class="list-group-item">
+			<h4 class="list-group-item-heading"><?php echo $website->name; ?></h4>
 
-		$website = new stdClass();
-		$website->file = $file;
-		$website->name = $basename;
-		$website->url  = 'http://' . $website->name . '/';
+			<p class="list-group-item-text"><?php echo $website->description; ?></p>
+		</a>
 
-		if ( isset( $options[ $basename ] ) ) {
-			if ( isset( $options[ $basename ]['display_name'] ) ) {
-				$website->name = $options[ $basename ]['display_name'];
-			}
-		}
+	<?php endforeach; ?>
 
-		$websites[] = $website;
-	}
-}
+</div>
 
-foreach ( $websites as $website ) {
-	printf(
-		'<a href="%s">%s</a>',
-		$website->url, 
-		$website->name
-	);
+<?php
 
-	echo '<br />';
-}
+include 'wp-cli.php';
 
-// Functions
-function wp_cli_options_str( $options ) {
-	$array = array();
-
-	foreach ( $options as $name => $value ) {
-		$array[] = '--' . $name . '=' . $value;
-	}
-
-	$string = implode( ' ', $array );
-
-	return $string;
-}
-
-// WordPress install
-$root   = realpath( '../' );
-$domain = 'test.dev';
-$new    = $root . '/' . $domain;
-
-$commands[] = 'mkdir ' . $new;
-
-$commands[] = 'cd ' . $new;
-
-$commands[] = 'wp core download ' . wp_cli_options_str( array(
-	'path'   => $new,
-	'locale' => $locale,
-) );
-
-$commands[] = 'wp core config ' . wp_cli_options_str( array(
-	'dbname' => str_replace( '.', '_', $domain ) . '_wp',
-	'dbuser' => $dbuser,
-	'dbpass' => $dbpass,
-	'locale' => $locale,
-) );
-
-$commands[] = 'wp db create';
-
-$commands[] = 'wp core install ' . wp_cli_options_str( array(
-	'url'            => 'http://' . $domain . '/',
-	'title'          => $domain,
-	'admin_user'     => $admin_user,
-	'admin_password' => $admin_password,
-	'admin_email'    => $admin_email,
-) );
-
-echo '<pre>';
-echo implode( "\r\n", $commands );
-echo '</pre>';
+include 'footer.php';

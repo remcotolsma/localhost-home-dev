@@ -1,0 +1,33 @@
+{
+  "name": "home.dev",
+  "version": "1.0.0",
+  "homepage": "https://github.com/remcotolsma/localhost-home-dev",
+  "authors": [
+    "Remco Tolsma <info@remcotolsma.nl>"
+  ],
+  "description": "A localhost webpage for WordPress development.",
+  "keywords": [
+    "home",
+    "dev",
+    "wordpress",
+    "wp",
+    "wp-cli",
+    "local",
+    "localhost",
+    "pronamic",
+    "remcotolsma"
+  ],
+  "license": "GPL",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "angular": "~1.3.0"
+  }
+}
