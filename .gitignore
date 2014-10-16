@@ -1,0 +1,9 @@
+# Config
+/config.php
+
+# Develepmont
+/*.dev
+
+# Defaults
+!/home.dev
+!/phpinfo.dev
