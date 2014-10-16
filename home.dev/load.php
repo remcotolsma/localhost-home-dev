@@ -3,6 +3,10 @@
 require_once '../config.php';
 require_once 'functions.php';
 
+// Date
+date_default_timezone_set( $timezone );
+
+// Websites
 $websites = array();
 
 $options = array(
