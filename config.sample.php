@@ -9,3 +9,6 @@ $admin_email    = 'email@example.com';
 $dbuser = 'root';
 $dbpass = 'root';
 $locale = 'nl_NL';
+
+$projects_dir = '~/Projects';
+$websites_dir = '~/Websites';

@@ -40,4 +40,6 @@ include 'header.php';
 
 include 'wp-cli.php';
 
+include 'symlink.php';
+
 include 'footer.php';
