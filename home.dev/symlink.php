@@ -15,5 +15,7 @@
 		<hr />
 
 		<pre>ln -s <?php echo $projects_dir; ?>/{{project}}  <?php echo $websites_dir; ?>/{{domain}}.dev/wp-content/plugins/{{project}}</pre>
+
+		<pre>ln -s <?php echo $projects_dir; ?>/{{project}}  <?php echo $websites_dir; ?>/{{domain}}.dev/wp-content/themes/{{project}}</pre>
 	</div>
 </div>
