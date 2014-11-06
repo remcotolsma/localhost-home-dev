@@ -28,6 +28,9 @@
 			<li>
 				<a href="#plugins" role="tab" data-toggle="tab">Plugins</a>
 			</li>
+			<li>
+				<a href="#database" role="tab" data-toggle="tab">Database</a>
+			</li>
 		</ul>
 
 		<div class="tab-content">
@@ -39,6 +42,9 @@
 			</div>
 			<div class="tab-pane panel-body" id="plugins">
 				<?php include 'wp-cli-plugins.php'; ?>
+			</div>
+			<div class="tab-pane panel-body" id="database">
+				<?php include 'wp-cli-database.php'; ?>
 			</div>
 		</div>
 	</div>
