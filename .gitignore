@@ -15,3 +15,7 @@ bower_components
 /.buildpath
 /.project
 /.settings
+
+# NGINX
+/nginx/logs/*.log
+/nginx/nginx.conf
